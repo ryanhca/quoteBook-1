@@ -16,18 +16,27 @@ app.service('mainService', function(){
         return quotes;
     }
     
-    this.addData = function(quoteObj){
-        if(quoteObj.author && quoteObj.text){
-            quotes.push(quoteObj);
+    this.addData = function(copy, authorName){
+        
+        if(!authorName){
+            authorName = 'Anonamous';
         }
+        var quoteObj = {text: copy, author: authorName};
+        console.log(quoteObj);
+            quotes.push(quoteObj);
     }
     
-    this.removeData = function(quoteText){
-        for(var i = 0; i < quotes.length; i++){
-            if(quoteText === quotes[i].text){
-                quotes.splice(i,1);
-            }
-        }
+//    this.removeData = function(quoteText){
+//        for(var i = 0; i < quotes.length; i++){
+//            if(quoteText === quotes[i].text){
+//                quotes.splice(i,1);
+//            }
+//        }
+//        //quotes.splice(quoteText,1);
+//    }
+    
+    this.removeData = function(quote){
+        quotes.splice(quote,1);
     }
     
 });
