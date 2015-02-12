@@ -32,11 +32,10 @@ app.service('mainService', function(){
 //                quotes.splice(i,1);
 //            }
 //        }
-//        //quotes.splice(quoteText,1);
 //    }
     
     this.removeData = function(quote){
-        quotes.splice(quote,1);
+        quotes.splice(quotes.indexOf(quote),1);
     }
     
 });
