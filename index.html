@@ -7,7 +7,10 @@
 </head>
 <body ng-controller="MainController">
     <div class="container">
-        <div class="quoteArea" ng-repeat="quote in quotes | filter : filterText">
+        <div class="center-block MQBL">
+            <h1>My Quote Book</h1>
+        </div>
+        <div ng-repeat="quote in quotes | filter : filterText">
             <blockquote class="blockquote-reverse">
                 <p>{{quote.text}}</p>
                 <footer>-{{quote.author}}</footer>
